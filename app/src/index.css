@@ -1,0 +1,103 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 220 18% 5%;
+    --foreground: 228 33% 97%;
+    --card: 220 16% 9%;
+    --card-foreground: 228 33% 97%;
+    --popover: 220 16% 9%;
+    --popover-foreground: 228 33% 97%;
+    --primary: 147 100% 71%;
+    --primary-foreground: 220 18% 5%;
+    --secondary: 220 16% 12%;
+    --secondary-foreground: 228 33% 97%;
+    --muted: 220 16% 12%;
+    --muted-foreground: 220 9% 67%;
+    --accent: 147 100% 71%;
+    --accent-foreground: 220 18% 5%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 228 33% 97%;
+    --border: 228 33% 97% / 0.08;
+    --input: 228 33% 97% / 0.08;
+    --ring: 147 100% 71%;
+    --radius: 0.75rem;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Space Grotesk', sans-serif;
+  }
+
+  .font-mono {
+    font-family: 'IBM Plex Mono', monospace;
+  }
+}
+
+@layer utilities {
+  .text-stroke {
+    -webkit-text-stroke: 2px rgba(244, 246, 251, 0.12);
+    -webkit-text-fill-color: transparent;
+  }
+
+  .neon-glow {
+    filter: drop-shadow(0 0 10px rgba(111, 255, 163, 0.45));
+  }
+
+  .neon-glow-strong {
+    filter: drop-shadow(0 0 14px rgba(111, 255, 163, 0.6));
+  }
+
+  .grid-bg {
+    background-image: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 49px,
+      rgba(244, 246, 251, 0.03) 49px,
+      rgba(244, 246, 251, 0.03) 50px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 49px,
+      rgba(244, 246, 251, 0.03) 49px,
+      rgba(244, 246, 251, 0.03) 50px
+    );
+  }
+}
+
+@keyframes ring-glow {
+  0%, 100% { opacity: 0.35; }
+  50% { opacity: 0.55; }
+}
+
+@keyframes ring-glow-strong {
+  0%, 100% { opacity: 0.45; }
+  50% { opacity: 0.75; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+@keyframes orbit {
+  from { transform: rotate(0deg) translateX(80px) rotate(0deg); }
+  to { transform: rotate(360deg) translateX(80px) rotate(-360deg); }
+}
+
+@keyframes dash-march {
+  to { stroke-dashoffset: -20; }
+}
+
+@keyframes score-pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.02); }
+}
